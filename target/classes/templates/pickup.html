@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+	
+</head>
+<body>
+	<div class="container">
+		<h1>Pickup Management System</h1>
+		<hr>
+		<h2>Save</h2>
+
+		<form action="#" th:action="@{/savePickup}" th:object="${pickup}"
+			method="POST">
+				
+				
+				<label>Nombre del cliente</label>
+				<input type="text" th:field="*{firstName}"
+				placeholder="Nombre del cliente" class="form-control mb-4 col-4">
+				
+				<label>Productos frios</label>
+				<input type="text" th:field="*{productos_frios}"
+				placeholder="Productos frios" id="frios" class="form-control mb-4 col-4">
+				
+				<label>Productos congelados</label>
+				<input type="text" th:field="*{productos_congelados}"
+				placeholder="Productos congelados" id="congelados" class="form-control mb-4 col-4">
+				
+				<label>Productos normales</label>
+				<input type="text" id="productos" th:field="*{productos_normales}"
+				 class="form-control mb-4 col-4">
+				 
+				 <label>Cantidad de bultos</label>
+				<input type="text" id="productos" th:field="*{productos_cantidad}"
+				 class="form-control mb-4 col-4">
+				 
+				 
+				
+				
+				
+				
+				<button type="submit" class="btn btn-info col-2" onclick="Save()"> Save</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/}"> Back toList</a>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+ <script src="js/pickup.js"></script>
+<link rel="stylesheet" href="css/estilos.css">
+ 
+</html>
