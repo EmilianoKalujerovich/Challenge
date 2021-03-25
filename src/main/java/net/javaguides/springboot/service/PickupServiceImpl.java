@@ -47,13 +47,13 @@ public class PickupServiceImpl implements PickupService {
 	@Override
 	public Pickup getPickupById(long id) {
 		Optional<Pickup> optional = pickupRepository.findById(id);
-		Pickup employee = null;
+		Pickup pickup = null;
 		if (optional.isPresent()) {
-			employee = optional.get();
+			pickup = optional.get();
 		} else {
-			throw new RuntimeException(" Employee not found for id :: " + id);
+			throw new RuntimeException(" User not found for id :: " + id);
 		}
-		return employee;
+		return pickup;
 	}
 
 	
